@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprobante de Nómina</title>
+    
+    <!-- Aquí pegamos los estilos CSS -->
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f0f2f5;
+            padding: 40px 20px;
+            color: #333;
+        }
+
+        .nomina-container {
+            max-width: 800px;
+            background: #ffffff;
+            margin: 0 auto;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Encabezado */
+        .nomina-header {
+            text-align: center;
+            border-bottom: 2px solid #0056b3;
+            padding-bottom: 20px;
+            margin-bottom: 25px;
+        }
+
+        .nomina-header h1 {
+            color: #0056b3;
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        .nomina-header p {
+            font-size: 13px;
+            color: #666;
+        }
+
+        .nomina-header h2 {
+            font-size: 16px;
+            margin-top: 15px;
+            color: #444;
+            letter-spacing: 1px;
+        }
+
+        /* Información del Empleado */
+        .info-section {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 25px;
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 6px;
+        }
+
+        .info-box p {
+            font-size: 14px;
+            margin-bottom: 6px;
+        }
+
+        /* Tabla */
+        .nomina-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 25px;
+        }
+
+        .nomina-table th, .nomina-table td {
+            border: 1px solid #dee2e6;
+            padding: 12px;
+            text-align: left;
+            font-size: 14px;
+        }
+
+        .nomina-table th {
+            background-color: #0056b3;
+            color: white;
+        }
+
+        .nomina-table td:nth-child(2), 
+        .nomina-table td:nth-child(3),
+        .nomina-table th:nth-child(2), 
+        .nomina-table th:nth-child(3) {
+            text-align: right;
+        }
+
+        /* Totales */
+        .totals-section {
+            margin-left: auto;
+            width: 350px;
+            margin-bottom: 40px;
+        }
+
+        .total-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 12px;
+            font-size: 14px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .total-row.net {
+            background-color: #e9ecef;
+            font-weight: bold;
+            font-size: 16px;
+            color: #0056b3;
+            border-top: 2px solid #0056b3;
+            border-bottom: 2px solid #0056b3;
+            margin-top: 5px;
+        }
+
+        /* Firmas */
+        .signatures-section {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 60px;
+        }
+
+        .signature-box {
+            width: 40%;
+            text-align: center;
+        }
+
+        .signature-box .line {
+            border-top: 1px solid #333;
+            margin-bottom: 8px;
+        }
+
+        .signature-box p {
+            font-size: 13px;
+            color: #555;
+        }
+
+        /* Estilo para impresión */
+        @media print {
+            body {
+                background-color: white;
+                padding: 0;
+            }
+            .nomina-container {
+                box-shadow: none;
+                padding: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="nomina-container">
+        <!-- Encabezado de la Empresa -->
+        <header class="nomina-header">
+            <h1>TECH SOLUTIONS S.A.S.</h1>
+            <p>NIT: 900.123.456-1</p>
+            <p>Calle 100 # 15-20, Bogotá D.C.</p>
+            <h2>COMPROBANTE DE PAGO DE NÓMINA</h2>
+        </header>
+
+        <!-- Información del Empleado y Periodo -->
+        <section class="info-section">
+            <div class="info-box">
+                <p><strong>Empleado:</strong> Carlos Andrés Pérez</p>
+                <p><strong>Documento:</strong> C.C. 1.020.300.400</p>
+                <p><strong>Cargo:</strong> Desarrollador Web Senior</p>
+            </div>
+            <div class="info-box">
+                <p><strong>Periodo de Pago:</strong> 01/08/2026 al 31/08/2026</p>
+                <p><strong>Días Trabajados:</strong> 30</p>
+                <p><strong>Cuenta Bancaria:</strong> Ahorros **** 5678</p>
+            </div>
+        </section>
+
+        <!-- Tabla de Devengados y Deducciones -->
+        <table class="nomina-table">
+            <thead>
+                <tr>
+                    <th>Concepto / Descripción</th>
+                    <th>Devengados (Ingresos)</th>
+                    <th>Deducciones (Descuentos)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Sueldo Básico</td>
+                    <td>$ 4,500,000</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Auxilio de Transporte</td>
+                    <td>$ 162,000</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Aporte a Salud (4%)</td>
+                    <td>-</td>
+                    <td>$ 180,000</td>
+                </tr>
+                <tr>
+                    <td>Aporte a Pensión (4%)</td>
+                    <td>-</td>
+                    <td>$ 180,000</td>
+                </tr>
+                <tr>
+                    <td>Fondo de Solidaridad Pensional</td>
+                    <td>-</td>
+                    <td>$ 45,000</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Totales -->
+        <section class="totals-section">
+            <div class="total-row">
+                <span>Total Devengado:</span>
+                <span class="amount">$ 4,662,000</span>
+            </div>
+            <div class="total-row">
+                <span>Total Deducciones:</span>
+                <span class="amount">$ 405,000</span>
+            </div>
+            <div class="total-row net">
+                <span>NETO A PAGAR:</span>
+                <span class="amount">$ 4,257,000</span>
+            </div>
+        </section>
+
+        <!-- Firmas -->
+        <footer class="signatures-section">
+            <div class="signature-box">
+                <div class="line"></div>
+                <p>Firma del Empleador</p>
+            </div>
+            <div class="signature-box">
+                <div class="line"></div>
+                <p>Firma del Empleado</p>
+            </div>
+        </footer>
+    </div>
+
+</body>
+</html>
