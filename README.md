@@ -1,0 +1,1 @@
+se esta configurando un entorno de pruebas con mi repositorio de práctica para experimentar de forma segura el flujo de trabajo de Git. el objetivo principal es poner a prueba el manejo, la creación y la fusión de ramas, además de verificar el comportamiento y la integración del aplicativo que estoy desarrollando.
